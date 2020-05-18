@@ -200,7 +200,7 @@ def one_hot_encode_sectors(all_factors):
 		sector_columns.append(sector_column)
 		all_factors[sector_column] = (all_factors['sector_code'] == sector_i)
 
-	return all_factors,sector_columns
+	return all_factors
 
 def run_data_pipeline(engine,universe,start_date,end_date):
 	
@@ -275,10 +275,10 @@ def run_data_pipeline(engine,universe,start_date,end_date):
 
 	# One Hot Encoding Sectors
 
-	all_factors,sector_columns = one_hot_encode_sectors(all_factors)
+	all_factors = one_hot_encode_sectors(all_factors)
 
 	# Shifted Target For Training The Model
 
 	all_factors['target'] = all_factors.groupby(level=1)['return_5d'].shift(-5)
 
-	return all_factors,sector_columns
+	return all_factors
