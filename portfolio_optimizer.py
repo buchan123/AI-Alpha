@@ -93,7 +93,6 @@ class OptimalHoldings(AbstractOptimalHoldings):
         """
         assert(len(alpha_vector.columns) == 1)
 
-        #TODO: Implement function
         
         return cvx.Minimize(-alpha_vector.T.values[0]*weights)
     
@@ -117,7 +116,6 @@ class OptimalHoldings(AbstractOptimalHoldings):
         """
         assert(len(factor_betas.shape) == 2)
         
-        #TODO: Implement function
     
         return [risk<=self.risk_cap**2,factor_betas.T*weights<=self.factor_max,factor_betas.T*weights>=self.factor_min,
                 sum(weights)==0,sum(cvx.abs(weights))<=1,weights>=self.weights_min,weights<=self.weights_max]
@@ -149,7 +147,6 @@ class OptimalHoldingsRegualization(OptimalHoldings):
         """
         assert(len(alpha_vector.columns) == 1)
         
-        #TODO: Implement function
         
         return cvx.Minimize(-alpha_vector.T.values[0]*weights + self.lambda_reg*cvx.pnorm(weights,2))
 
@@ -180,9 +177,7 @@ class OptimalHoldingsStrictFactor(OptimalHoldings):
         """
         assert(len(alpha_vector.columns) == 1)
         
-        #TODO: Implement function
         alpha_vec_vals=alpha_vector.values[:,0]
         x_star=(alpha_vec_vals-np.mean(alpha_vec_vals))/sum(abs(alpha_vec_vals))
         objective = cvx.Minimize(cvx.pnorm(weights-x_star,2))
         return objective
-
