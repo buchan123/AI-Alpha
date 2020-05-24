@@ -21,7 +21,8 @@ def fit_pca(returns, num_factor_exposures, svd_solver):
         Model fit to returns
     """
     
-    pca = PCA(n_components=num_factor_exposures, svd_solver=svd_solver)
+    pca = PCA(n_components=num_factor_exposures, svd_solver=svd_solver,random_state = 1)
+    
     return pca.fit(returns)
 
 def factor_betas(pca, factor_beta_indices, factor_beta_columns):
@@ -169,4 +170,3 @@ def risk_modelling(returns,num_factor_exposures = 20):
 	risk_model['idiosyncratic_var_vector'] = idiosyncratic_var_vector(returns, risk_model['idiosyncratic_var_matrix'])
 
 	return risk_model
-
