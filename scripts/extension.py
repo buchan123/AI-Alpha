@@ -12,7 +12,7 @@ register(
     'eod-yahoofinance',
     csvdir_equities(
         ['daily'],
-        '/home/siddhant/Desktop/Major-Project/data',
+        'AI-Alpha/data',
     ),
     calendar_name='XBOM', 
     start_session=start_session,
