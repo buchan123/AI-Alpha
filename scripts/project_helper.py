@@ -14,7 +14,7 @@ from zipline.pipeline.loaders import USEquityPricingLoader
 from zipline.utils.numpy_utils import int64_dtype
 
 
-EOD_BUNDLE_NAME = 'eod-yahoofinance'
+EOD_BUNDLE_NAME = 'eod-nifty500'
 
 
 class PricingLoader(object):
