@@ -4,7 +4,7 @@ from zipline.data.bundles import register
 from zipline.data.bundles.csvdir import csvdir_equities
 
 
-start_session = pd.Timestamp('2015-5-15', tz='utc')
+start_session = pd.Timestamp('2009-5-20', tz='utc')
 end_session = pd.Timestamp('2020-5-15', tz='utc')
 
 
