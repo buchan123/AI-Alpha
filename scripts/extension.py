@@ -9,7 +9,7 @@ end_session = pd.Timestamp('2020-5-15', tz='utc')
 
 
 register(
-    'eod-yahoofinance',
+    'eod-nifty500',
     csvdir_equities(
         ['daily'],
         'AI-Alpha/data',
