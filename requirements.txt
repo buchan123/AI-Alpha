@@ -5,5 +5,5 @@ numpy==1.18.4
 cvxpy==1.0.31
 graphviz==0.10.1
 pandas==0.22.0
-ipython==7.14.0
+ipython==7.16.3
 scikit_learn==0.23.1
